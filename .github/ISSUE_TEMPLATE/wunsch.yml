@@ -1,0 +1,64 @@
+name: Wunsch / Feature request
+description: Etwas fehlt oder sollte anders sein. / Something is missing or should work differently.
+labels: ["art/wunsch"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Maßstab für Bedienung und Aussehen ist GNOME 2 (Ubuntu 10.04). **Meldungen sind öffentlich.**
+        *Behaviour and looks follow GNOME 2 (Ubuntu 10.04). Reports are public.*
+
+  - type: dropdown
+    id: komponente
+    attributes:
+      label: Komponente / Component
+      options:
+        - Weiß nicht / Don't know
+        - querencia-shell – Panel, Arbeitsfläche, Thema / panel, desktop, theme
+        - querencia-session – Sitzungsstart / session start
+        - querencia-sitzung – Abmelden, Bildschirmsperre, Passwortabfrage / log out, screen lock, password prompt
+        - querencia-anmeldung – Anmeldebildschirm / login screen
+        - labwc – Fensterrahmen, Fenster verschieben, Tastenkürzel / window frames, moving windows, shortcuts
+        - querencia-files – Dateimanager / file manager
+        - querencia-terminal – Terminal
+        - querencia-editor – Texteditor / text editor
+        - querencia-bilder – Bildbetrachter / image viewer
+        - querencia-dokumente – Dokumentenbetrachter (PDF) / document viewer
+        - querencia-archiv – Archivverwaltung / archive manager
+        - querencia-screenshot – Bildschirmfoto / screenshot tool
+        - querencia-rechner – Rechner / calculator
+        - querencia-systemmonitor – Systemmonitor / system monitor
+        - querencia-dateisuche – Dateisuche / file search
+        - querencia-einstellungen – Einstellungen / settings
+        - querencia-software – Software-Verwaltung / software manager
+        - querencia-benachrichtigungen – Benachrichtigungen / notifications
+        - querencia-symbole – Symbole / icons
+        - querencia-hintergruende – Hintergrundbilder / backgrounds
+        - querencia-desktop – Installation, Aktualisierung, Entfernen / install, upgrade, removal
+        - Neues Programm / New program
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: wunsch
+    attributes:
+      label: Was wünschst du dir? / What would you like?
+    validations:
+      required: true
+
+  - type: textarea
+    id: anlass
+    attributes:
+      label: Wofür brauchst du es? / What do you need it for?
+      description: Die Aufgabe dahinter, nicht die Lösung. / The task behind it, not the solution.
+    validations:
+      required: true
+
+  - type: textarea
+    id: vorbild
+    attributes:
+      label: Wie war es in GNOME 2 oder anderswo? / How did GNOME 2 or another desktop do it?
+      description: Optional. Bildschirmfoto ohne private Inhalte. / Optional. Screenshot without private content.
+    validations:
+      required: false

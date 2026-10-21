@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Sicherheitslücke melden / Report a security vulnerability
+    url: https://github.com/querencia-desktop/querencia/security/advisories/new
+    about: Privat über GitHub, nicht als öffentliches Issue. Eine E-Mail-Adresse dafür gibt es nicht. / Privately via GitHub, not as a public issue. There is no e-mail address for this.
+  - name: Häufige Fragen / FAQ
+    url: https://querencialinux.org/de/docs/faq.html
+    about: Antworten zu Installation, Protokollen und Entfernen. / Answers about installation, logs and removal.

@@ -1,0 +1,31 @@
+name: Frage / Question
+description: Etwas ist unklar, z. B. Installation oder Bedienung. / Something is unclear, e.g. installation or usage.
+labels: ["art/frage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Häufige Fragen / FAQ: https://querencialinux.org/de/docs/faq.html · https://querencialinux.org/en/docs/faq.html
+        **Meldungen sind öffentlich.** / *Reports are public.*
+
+  - type: textarea
+    id: frage
+    attributes:
+      label: Deine Frage / Your question
+    validations:
+      required: true
+
+  - type: textarea
+    id: versucht
+    attributes:
+      label: Was hast du schon versucht? / What have you tried so far?
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Ubuntu- und Querencia-Version / Ubuntu and Querencia version
+      description: "Optional, z. B. / e.g.: Ubuntu 26.04.1 LTS, querencia-desktop 0.1.0~alpha2"
+    validations:
+      required: false

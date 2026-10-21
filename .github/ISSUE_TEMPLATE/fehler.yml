@@ -1,0 +1,139 @@
+name: Fehler melden / Report a bug
+description: Etwas funktioniert nicht wie erwartet. / Something does not work as expected.
+labels: ["art/fehler"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Deutsch oder Englisch. **Meldungen sind öffentlich.** Sicherheitslücken nicht hier melden, sondern unter *Security* → *Report a vulnerability*.
+        *German or English. Reports are public. Do not report security vulnerabilities here; use* Security → Report a vulnerability.
+
+  - type: dropdown
+    id: komponente
+    attributes:
+      label: Komponente / Component
+      options:
+        - Weiß nicht / Don't know
+        - querencia-shell – Panel, Arbeitsfläche, Thema / panel, desktop, theme
+        - querencia-session – Sitzungsstart / session start
+        - querencia-sitzung – Abmelden, Bildschirmsperre, Passwortabfrage / log out, screen lock, password prompt
+        - querencia-anmeldung – Anmeldebildschirm / login screen
+        - labwc – Fensterrahmen, Fenster verschieben, Tastenkürzel / window frames, moving windows, shortcuts
+        - querencia-files – Dateimanager / file manager
+        - querencia-terminal – Terminal
+        - querencia-editor – Texteditor / text editor
+        - querencia-bilder – Bildbetrachter / image viewer
+        - querencia-dokumente – Dokumentenbetrachter (PDF) / document viewer
+        - querencia-archiv – Archivverwaltung / archive manager
+        - querencia-screenshot – Bildschirmfoto / screenshot tool
+        - querencia-rechner – Rechner / calculator
+        - querencia-systemmonitor – Systemmonitor / system monitor
+        - querencia-dateisuche – Dateisuche / file search
+        - querencia-einstellungen – Einstellungen / settings
+        - querencia-software – Software-Verwaltung / software manager
+        - querencia-benachrichtigungen – Benachrichtigungen / notifications
+        - querencia-symbole – Symbole / icons
+        - querencia-hintergruende – Hintergrundbilder / backgrounds
+        - querencia-desktop – Installation, Aktualisierung, Entfernen / install, upgrade, removal
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: pakete
+    attributes:
+      label: Paketversionen / Package versions
+      description: |
+        Ausgabe von / Output of:
+        `dpkg -l 'querencia-*' labwc`
+      render: text
+    validations:
+      required: true
+
+  - type: input
+    id: ubuntu
+    attributes:
+      label: Ubuntu-Version / Ubuntu version
+      description: "Ausgabe von / Output of: `lsb_release -ds`"
+      placeholder: Ubuntu 26.04.1 LTS
+    validations:
+      required: true
+
+  - type: dropdown
+    id: maschine
+    attributes:
+      label: Rechner / Machine
+      options:
+        - Echter Rechner / Physical computer
+        - Virtuelle Maschine / Virtual machine
+    validations:
+      required: false
+
+  - type: textarea
+    id: schritte
+    attributes:
+      label: Schritte zum Nachstellen / Steps to reproduce
+      placeholder: |
+        1. Im Panel auf … klicken / Click … in the panel
+        2. …
+    validations:
+      required: true
+
+  - type: textarea
+    id: erwartet
+    attributes:
+      label: Erwartet / Expected
+    validations:
+      required: true
+
+  - type: textarea
+    id: tatsaechlich
+    attributes:
+      label: Tatsächlich / Actual
+      description: Fehlermeldungen wörtlich. / Quote error messages exactly.
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### Log
+
+        `~/.local/state/querencia/<programm>.log`, Sitzungsstart: `sitzung-start.log`
+
+        > [!WARNING]
+        > Vorher schwärzen: Heimpfade, Benutzer- und Rechnernamen, IP-Adressen, `smb://`-Adressen, private Dateinamen. Das Log der Benachrichtigungen kann Nachrichtentexte enthalten.
+        > *Redact first: home paths, user and host names, IP addresses, `smb://` addresses, private file names. The notifications log may contain message texts.*
+
+        Ersetzt das Gröbste, Durchlesen bleibt nötig. / *Replaces the obvious parts; still read it yourself.*
+
+        ```sh
+        tail -n 50 ~/.local/state/querencia/panel.log | sed -E -e "s#$HOME#~#g" -e "s#\b$USER\b#user#g" -e "s#$(hostname)#rechner#g" -e 's/([0-9]{1,3}\.){3}[0-9]{1,3}/x.x.x.x/g'
+        ```
+
+  - type: textarea
+    id: log
+    attributes:
+      label: Log-Auszug, geschwärzt / Log excerpt, redacted
+      description: Etwa 50 Zeilen um den Fehler. / About 50 lines around the error.
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: zusatz
+    attributes:
+      label: Sonstiges / Anything else
+      description: Bildschirmfotos nur ohne private Inhalte (Desktop, Dateinamen, Fenstertitel prüfen). / Screenshots only without private content (check desktop, file names, window titles).
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: pruefung
+    attributes:
+      label: Vor dem Absenden / Before submitting
+      options:
+        - label: Ich habe Log und Text durchgesehen und Heimpfade, Rechnernamen und IP-Adressen geschwärzt. / I have checked the log and text and redacted home paths, host names and IP addresses.
+          required: true
+        - label: Ich habe nach einer vorhandenen Meldung zum selben Fehler gesucht. / I have searched for an existing report of the same bug.
+          required: true

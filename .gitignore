@@ -1,0 +1,6 @@
+# Editor- und Systemreste
+*~
+*.swp
+.DS_Store
+# Logs und Anhänge aus Meldungen nie einchecken
+*.log
