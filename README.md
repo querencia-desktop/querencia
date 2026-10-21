@@ -1,5 +1,13 @@
 # Querencia Desktop – Meldungen
 
+Querencia Desktop ist eine klassische Desktopumgebung im Stil von GNOME 2 für
+Wayland (labwc, Rust, GTK 4), zurzeit als Alpha 2 für Ubuntu 26.04. Alles
+Weitere auf <https://querencialinux.org>.
+
+*Querencia Desktop is a classic GNOME-2-style desktop for Wayland (labwc,
+Rust, GTK 4), currently Alpha 2 for Ubuntu 26.04; everything else is on
+<https://querencialinux.org>.*
+
 [Deutsch](#deutsch) · [English](#english)
 
 ## Deutsch
@@ -79,5 +87,4 @@ the report says so with the version.
 ## Lizenz / Licence
 
 CC BY-SA 4.0 ([LICENSE](LICENSE)), ausgenommen Name und Logo „Querencia“ /
-except the name and logo "Querencia". Querencia wird mit KI-Werkzeugen
-entwickelt / is developed with AI tools.
+except the name and logo "Querencia".
