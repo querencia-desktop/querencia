@@ -19,7 +19,7 @@ body:
         - querencia-sitzung – Abmelden, Bildschirmsperre, Passwortabfrage / log out, screen lock, password prompt
         - querencia-anmeldung – Anmeldebildschirm / login screen
         - labwc – Fensterrahmen, Fenster verschieben, Tastenkürzel / window frames, moving windows, shortcuts
-        - querencia-files – Dateimanager / file manager
+        - querencia-dateien – Dateimanager / file manager
         - querencia-terminal – Terminal
         - querencia-editor – Texteditor / text editor
         - querencia-bilder – Bildbetrachter / image viewer

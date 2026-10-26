@@ -26,6 +26,6 @@ body:
     id: version
     attributes:
       label: Ubuntu- und Querencia-Version / Ubuntu and Querencia version
-      description: "Optional, z. B. / e.g.: Ubuntu 26.04.1 LTS, querencia-desktop 0.1.0~alpha2"
+      description: "Optional, z. B. / e.g.: Ubuntu 26.04.1 LTS, querencia-desktop 0.1.0~alpha3.1-1"
     validations:
       required: false
