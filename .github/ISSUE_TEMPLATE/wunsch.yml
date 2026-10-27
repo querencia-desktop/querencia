@@ -32,6 +32,7 @@ body:
         - querencia-einstellungen – Einstellungen / settings
         - querencia-software – Software-Verwaltung / software manager
         - querencia-benachrichtigungen – Benachrichtigungen / notifications
+        - querencia-schnatter – Schnatter, WhatsApp-Web-Fenster (wahlweise) / WhatsApp Web window (optional)
         - querencia-symbole – Symbole / icons
         - querencia-hintergruende – Hintergrundbilder / backgrounds
         - querencia-desktop – Installation, Aktualisierung, Entfernen / install, upgrade, removal
